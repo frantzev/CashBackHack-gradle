@@ -1,42 +1,37 @@
-package ru.netology.domain;
+package ru.netology.service;
 
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class CashbackHackerTest {
-    public CashbackHacker cashbackHacker = new CashbackHacker();
+class CashbackHackServiceTest {
+    public CashbackHackService cashbackHacker = new CashbackHackService();
 
     @Test
-    public void shouldCashBackSum900() {
-        int actual = cashbackHacker.remain(900);
-        int expected = 100;
-        assertEquals(expected, actual);
-    }
-    @Test
-    public void shouldCashBackSum100() {
-        int actual = cashbackHacker.remain(100);
-        int expected = 900;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldCashBackSum5000() {
-        int actual = cashbackHacker.remain(4000);
-        int expected = 0;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldCashBackSum1000() {
-        int actual = cashbackHacker.remain(1000);
-        int expected = 0;
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void shouldCashBackSum1100() {
+    void shouldCashBackSum1100( ) {
         int actual = cashbackHacker.remain(1100);
         int expected = 900;
-        assertEquals(expected,actual);
+        assertEquals(actual, expected);
     }
 
+    @Test
+    void shouldCashBackSum500( ) {
+        int actual = cashbackHacker.remain(500);
+        int expected = 500;
+        assertEquals(actual, expected);
+    }
 
+    @Test
+    void shouldCashBackSum1000( ) {
+        int actual = cashbackHacker.remain(1000);
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void shouldCashBackSum3900( ) {
+        int actual = cashbackHacker.remain(3900);
+        int expected = 100;
+        assertEquals(actual, expected);
+    }
 }
