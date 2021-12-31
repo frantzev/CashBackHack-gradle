@@ -1,10 +1,9 @@
 package ru.netology.domain;
 
 public class CashbackHack-gradle {
-    private final int boundary = 1000;
+     private final int boundary = 1000;
 
     public int remain(int amount) {
-        int remainder = amount % boundary;
-        return remainder !=0 ? boundary - remainder : 0;
+        return boundary - amount % boundary;
     }
 }
