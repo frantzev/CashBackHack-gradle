@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-class CashbackHackServiceTest {
+class CashbackHackerTest {
      @Test
     public void enterIntegerValue() {
-        final CashbackHackService cashback = new CashbackHackService();
+        final CashbackHacker cashback = new CashbackHacker();
         int amount = 5700;
         int actual = cashback.remain(amount);
         int expected = 300;
@@ -16,7 +16,7 @@ class CashbackHackServiceTest {
 
     @Test
     public void enterNullValue() {
-        final CashbackHackService cashback = new CashbackHackService();
+        final CashbackHacker cashback = new CashbackHacker();
         int amount = 0;
         int actual = cashback.remain(amount);
         int expected = 1000;
@@ -25,7 +25,7 @@ class CashbackHackServiceTest {
 
     @Test
     public void enterRoundValue() {
-        final CashbackHackService cashback = new CashbackHackService();
+        final CashbackHacker cashback = new CashbackHacker();
         int amount = 1000;
         int actual = cashback.remain(amount);
         int expected = 0;
@@ -34,7 +34,7 @@ class CashbackHackServiceTest {
 
     @Test
     public void enterNegativeValue() {
-        final CashbackHackService cashback = new CashbackHackService();
+        final CashbackHacker cashback = new CashbackHacker();
         int amount = -50000;
         int actual = cashback.remain(amount);
         int expected = 0;
