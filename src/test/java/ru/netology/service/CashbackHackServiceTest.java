@@ -6,27 +6,31 @@ import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
-    @org.junit.Test
-    public void testRemainIfLess1000() {
-        int amount = 900;
-        int expected = 100;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.junit.Assert.assertEquals(expected, cashbackHackService.remain(amount));
+    @Test
+    public void shouldReturn500() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 500;
+        int expected = 500;
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
     }
 
-    @org.junit.Test
-    public void testRemainIfEqual1000() {
+    @Test
+    public void shouldReturn1000() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 0;
+        int expected = 1000;
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void shouldReturn0() {
+        CashbackHackService service = new CashbackHackService();
         int amount = 1000;
         int expected = 0;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.junit.Assert.assertEquals(expected, cashbackHackService.remain(amount));
-    }
-
-    @org.junit.Test
-    public void testRemainIfMore1000() {
-        int amount = 1200;
-        int expected = 800;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.junit.Assert.assertEquals(expected, cashbackHackService.remain(amount));
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
     }
 }
