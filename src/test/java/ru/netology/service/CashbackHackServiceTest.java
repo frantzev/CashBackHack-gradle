@@ -1,31 +1,38 @@
 package ru.netology.service;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 public class CashbackHackServiceTest {
 
-    @org.testng.annotations.Test
-    public void testRemainIfLess1000() {
-        int amount = 900;
-        int expected = 100;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.testng.Assert.assertEquals(cashbackHackService.remain(amount), expected);
+     @Test
+
+    public void shouldReturnIfAmountIs800() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 500;
+        int actual = service.remain(amount);
+        int expected = 500;
+
+        Assert.assertEquals(actual, expected);
     }
 
-    @org.testng.annotations.Test
-    public void testRemainIfEqual1000() {
+    @Test
+    public void shouldReturnIfAmountIs1000() {
+        CashbackHackService service = new CashbackHackService();
         int amount = 1000;
+        int actual = service.remain(amount);
         int expected = 0;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.testng.Assert.assertEquals(cashbackHackService.remain(amount), expected);
+
+        Assert.assertEquals(actual, expected);
     }
 
-    @org.testng.annotations.Test
-    public void testRemainIfMore1000() {
-        int amount = 1200;
-        int expected = 800;
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        org.testng.Assert.assertEquals(cashbackHackService.remain(amount), expected);
+    @Test
+    public void shouldReturnIfAmountIs0() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 0;
+        int actual = service.remain(amount);
+        int expected = 1000;
+
+        Assert.assertEquals(actual, expected);
     }
 }
