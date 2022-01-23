@@ -2,13 +2,13 @@ package ru.netology.service;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
    CashbackHackService service = new CashbackHackService();
 
-    @Test
+    org.junit.Test
     public void shouldReturn100IfAmountIs900() {
         int amount = 900;
         int actual = service.remain(amount);
@@ -17,7 +17,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+   org.junit.Test
     public void shouldReturnZeroIfAmountIs1000() {
         int amount = 1000;
         int actual = service.remain(amount);
@@ -26,7 +26,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+   org.junit.Test
     public void shouldReturn500IfAmountIs1500() {
         int amount = 1500;
         int actual = service.remain(amount);
@@ -35,7 +35,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    org.junit.Test
     public void shouldReturn1000IfAmountIsZero() {
         int amount = 0;
         int actual = service.remain(amount);
@@ -44,7 +44,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    org.junit.Test
     public void shouldCalculateRemainIfAmountIsLessBoundary() {
         int amount = 999;
         int actual = service.remain(amount);
@@ -53,7 +53,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+   org.junit.Test
     public void shouldCalculateRemainIfAmountIsMoreBoundary() {
         int amount = 1001;
         int actual = service.remain(amount);
@@ -62,7 +62,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    org.junit.Test
     public void shouldCalculateRemainIfAmountIsLessZero() {
         int amount = -1;
         int actual = service.remain(amount);
