@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 public class CashbackHackServiceTest {
 
-    org.testng.annotations.Test
 
     public void shouldReturnIfAmountIs800() {
         CashbackHackService service = new CashbackHackService();
