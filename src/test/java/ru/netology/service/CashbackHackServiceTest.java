@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class CashbackHackServiceTest {
 
-     @Test
+    org.testng.annotations.Test
 
     public void shouldReturnIfAmountIs800() {
         CashbackHackService service = new CashbackHackService();
@@ -16,7 +16,7 @@ public class CashbackHackServiceTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    org.testng.annotations.Test
     public void shouldReturnIfAmountIs1000() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
@@ -26,7 +26,7 @@ public class CashbackHackServiceTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    org.testng.annotations.Test
     public void shouldReturnIfAmountIs0() {
         CashbackHackService service = new CashbackHackService();
         int amount = 0;
